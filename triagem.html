@@ -64,13 +64,14 @@
             <label class="block text-xs font-semibold text-slate-700 mb-2">O que você procura?</label>
             <div class="grid grid-cols-1 gap-2">
                 <button type="button" data-g="servico" data-v="psicoterapia" class="opt text-xs py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 font-medium text-center">Psicoterapia (sessões de 1 hora)</button>
-                <button type="button" data-g="servico" data-v="avaliação psicológica" class="opt text-xs py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 font-medium text-center">Avaliação psicológica</button>
+                <button type="button" data-g="servico" data-v="avaliação psicológica" class="opt text-xs py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 font-medium text-center">Avaliação psicológica (psicodiagnóstico)</button>
+                <button type="button" data-g="servico" data-v="orientação parental" class="opt text-xs py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 font-medium text-center">Orientação para pais e responsáveis</button>
                 <button type="button" data-g="servico" data-v="ainda não sei" class="opt text-xs py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 font-medium text-center">Ainda não sei</button>
             </div>
         </div>
 
         <div>
-            <label class="block text-xs font-semibold text-slate-700 mb-2">Já fez terapia antes?</label>
+            <label class="block text-xs font-semibold text-slate-700 mb-2">Você (ou seu filho) já fez terapia antes?</label>
             <div class="grid grid-cols-2 gap-2">
                 <button type="button" data-g="antes" data-v="nunca fiz" class="opt text-xs py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 font-medium text-center">Nunca fiz</button>
                 <button type="button" data-g="antes" data-v="já fiz antes" class="opt text-xs py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 font-medium text-center">Já fiz antes</button>
@@ -112,6 +113,7 @@
     var WA = '5511989834166', AGENDA = 'https://agendahenrique.netlify.app/?p=agenda';
     var ORIGENS = { tiktok: 'TikTok', instagram: 'Instagram', psymeet: 'PsyMeet', indicacao: 'indicação', google: 'Google' };
     var TEMAS_TERAPIA = ['Ansiedade', 'Emoções intensas / instabilidade emocional (borderline)', 'Relacionamentos / dependência emocional', 'Autoestima', 'Neurodivergência (TDAH, autismo)', 'Outro assunto', 'Prefiro contar na conversa'];
+    var TEMAS_PAIS = ['Dificuldades no dia a dia com meu filho(a)', 'Suspeita de TDAH ou autismo no meu filho(a)', 'Meu filho(a) já tem diagnóstico', 'Outro assunto', 'Prefiro conversar'];
     var TEMAS_AVALIACAO = ['Autismo (TEA)', 'TDAH', 'Personalidade / borderline', 'Outra questão ou não sei', 'Prefiro conversar'];
     var TXT_SOCIAL = 'Reservo algumas vagas com valor social, definidas por uma avaliação socioeconômica rápida e sigilosa.';
     var r = { servico: '', antes: '', temas: [], valor: '' };
@@ -127,7 +129,7 @@
         var p = ['Olá Henrique! Vim pelo site' + (origem ? ' (' + origem + ')' : '') + '.'];
         if (r.servico) p.push('Procuro: ' + r.servico + '.');
         if (r.antes) p.push('Terapia antes: ' + r.antes + '.');
-        if (r.temas.length) p.push((r.servico === 'avaliação psicológica' ? 'Avaliação para: ' : 'Busco trabalhar: ') + r.temas.map(minusculo).join(', ') + '.');
+        if (r.temas.length) p.push((r.servico === 'avaliação psicológica' ? 'Avaliação para: ' : (r.servico === 'orientação parental' ? 'Quero conversar sobre: ' : 'Busco trabalhar: ')) + r.temas.map(minusculo).join(', ') + '.');
         if (r.valor) p.push('Valor: ' + r.valor + '.');
         return p.join(' ');
     }
@@ -135,8 +137,8 @@
     function temasBloco() {
         var b = $('bloco-tema');
         if (!r.servico) { b.classList.add('hidden'); return; }
-        var lista = r.servico === 'avaliação psicológica' ? TEMAS_AVALIACAO : TEMAS_TERAPIA;
-        $('tema-rotulo').textContent = r.servico === 'avaliação psicológica' ? 'A avaliação é para investigar...' : 'O que mais pesa hoje?';
+        var lista = r.servico === 'avaliação psicológica' ? TEMAS_AVALIACAO : (r.servico === 'orientação parental' ? TEMAS_PAIS : TEMAS_TERAPIA);
+        $('tema-rotulo').textContent = r.servico === 'avaliação psicológica' ? 'A avaliação é para investigar...' : (r.servico === 'orientação parental' ? 'Sobre o que você quer conversar?' : 'O que mais pesa hoje?');
         $('tema-opcoes').innerHTML = lista.map(function (t) {
             return '<button type="button" data-g="tema" data-v="' + esc(t) + '" class="opt text-xs py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 font-medium text-center">' + esc(t) + '</button>';
         }).join('');
@@ -158,6 +160,11 @@
             return;
         }
         if (r.valor === 'vi os valores da avaliação') r.valor = '';
+        if (r.servico === 'orientação parental') {
+            $('valor-titulo').textContent = 'Orientação para pais e responsáveis';
+            $('valor-texto').innerHTML = 'Espaço para conversar sobre os desafios do dia a dia com os filhos, inclusive quando há uma investigação de neurodivergência. O formato e o valor eu combino com você na conversa.';
+            opc.innerHTML = ''; r.valor = ''; return;
+        }
         if (r.servico === 'ainda não sei') {
             $('valor-titulo').textContent = 'Investimento';
             $('valor-texto').innerHTML = 'Psicoterapia: sessão de 1 hora a <strong>R$ 150</strong>, ou <strong>R$ 500 por mês</strong> (4 sessões). ' + TXT_SOCIAL + ' A avaliação psicológica tem valor fechado para o processo todo: me chame que eu explico.';
@@ -185,7 +192,7 @@
         var terapia = r.servico === 'psicoterapia', aval = r.servico === 'avaliação psicológica';
         var agenda = $('btn-agenda'), social = $('btn-social'), dica = $('dica');
         // Terapia com valor ok e avaliação: pode marcar direto. Valor social: antes, a avaliação socioeconômica. "Ainda não sei": conversa.
-        var marcaDireto = (terapia && r.valor === 'o valor está ok') || aval;
+        var marcaDireto = (terapia && r.valor === 'o valor está ok') || aval;   // orientação parental: conversa antes
         agenda.classList.toggle('hidden', !marcaDireto);
         agenda.textContent = aval ? 'Ver horários e marcar a entrevista inicial 📅' : 'Ver horários e marcar a primeira sessão 📅';
         agenda.href = linkAgenda();
