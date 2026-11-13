@@ -89,7 +89,7 @@
             </a>
 
             <!-- Opção B: Vai para o WhatsApp pedir vaga social ou tirar dúvidas -->
-            <a href="https://wa.me/5511989834166?text=Olá%20Henrique!%20Respondi%20ao%20pré-agendamento%20no%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20avaliação%20socioeconômica%20ou%20avaliação%20psicológica." target="_blank" class="block w-full bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold text-sm py-3.5 px-4 rounded-xl text-center transition-all">
+            <a href="triagem.html" id="btn-whats" class="block w-full bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold text-sm py-3.5 px-4 rounded-xl text-center transition-all">
                 Preciso de vaga social / Falar no WhatsApp 💬
             </a>
         </div>
@@ -109,6 +109,13 @@
             });
             element.classList.add('border-teal-600', 'bg-teal-50', 'text-teal-900', 'font-bold');
         }
+    </script>
+    <!-- Leva a origem do link da bio (?o=tiktok, ?o=instagram) para a página de triagem -->
+    <script>
+        (function () {
+            var b = document.getElementById('btn-whats');
+            if (b && location.search) b.href = 'triagem.html' + location.search;
+        })();
     </script>
 </body>
 </html>
