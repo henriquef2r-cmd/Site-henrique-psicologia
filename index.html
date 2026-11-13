@@ -4,111 +4,217 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Henrique | Psicólogo Clínico</title>
-    <!-- Tailwind CSS para um design limpo e profissional -->
+    <meta name="description" content="Psicoterapia online (Terapia do Esquema com intervenção informada pela DBT) e avaliação psicológica.">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .opt.sel { border-color:#0f766e; background:#f0fdfa; color:#134e4a; font-weight:700; }
+        details > summary { cursor:pointer; list-style:none; }
+        details > summary::-webkit-details-marker { display:none; }
+        details[open] .seta { transform: rotate(180deg); }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+<main class="max-w-md mx-auto px-4 py-8 w-full flex-grow">
 
-    <!-- Container Principal -->
-    <main class="max-w-md mx-auto px-4 py-8 w-full flex-grow">
-        
-        <!-- Cabeçalho / Perfil -->
-        <div class="text-center mb-8">
-            <div class="w-24 h-24 bg-teal-700 text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4 shadow-md">
-                H
-            </div>
-            <h1 class="text-2xl font-bold text-slate-900">Henrique | Psicólogo</h1>
-            <p class="text-sm text-teal-700 font-medium mt-1">Terapia do Esquema & Intervenção informada pela DBT</p>
-            <p class="text-xs text-slate-500 mt-0.5">CRP 06/227754</p>
+    <!-- Perfil -->
+    <div class="text-center mb-6">
+        <div class="w-24 h-24 bg-teal-700 text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4 shadow-md">H</div>
+        <h1 class="text-2xl font-bold text-slate-900">Henrique | Psicólogo</h1>
+        <p class="text-sm text-teal-700 font-medium mt-1">Terapia do Esquema & Intervenção informada pela DBT</p>
+        <p class="text-xs text-slate-500 mt-0.5">CRP 06/227754</p>
+    </div>
+
+    <!-- Apresentação -->
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 mb-4">
+        <h2 class="text-base font-semibold text-slate-900 mb-2">Terapia online para entender de onde vem o que você sente e aprender a lidar com isso no dia a dia.</h2>
+        <p class="text-sm text-slate-600 leading-relaxed">Não existe receita pronta: a gente descobre juntos o que funciona na <em>sua</em> realidade. Eu sempre explico o que estamos fazendo e para quê, e você pode ser você, sem medo de como vai falar ou aparecer.</p>
+        <ul class="mt-4 pt-4 border-t border-slate-100 space-y-2 text-xs text-slate-600 font-medium">
+            <li class="flex gap-2"><span>🎯</span><span>Objetivos combinados no início e acompanhados ao longo do processo</span></li>
+            <li class="flex gap-2"><span>📝</span><span>Ao final de cada sessão você recebe um resumo: o que conversamos, o que você notou e pontos de reflexão para a semana</span></li>
+            <li class="flex gap-2"><span>💻</span><span>Sessões online, de 1 hora, adaptadas ao seu ritmo</span></li>
+        </ul>
+    </div>
+
+    <!-- Como funciona (já responde o que mais perguntam, para a conversa começar mais adiante) -->
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 mb-6 divide-y divide-slate-100">
+        <details class="p-5">
+            <summary class="flex justify-between items-center text-sm font-semibold text-slate-900">Como funciona a primeira sessão <span class="seta text-slate-400 transition-transform">⌄</span></summary>
+            <p class="text-xs text-slate-600 leading-relaxed mt-3">Busco entender a sua demanda e a sua história de vida e, com base nisso, pensamos juntos como posso te ajudar. Também explico como trabalho e combinamos o funcionamento. Todo o processo é feito com transparência e em conjunto.</p>
+        </details>
+        <details class="p-5">
+            <summary class="flex justify-between items-center text-sm font-semibold text-slate-900">Frequência e duração <span class="seta text-slate-400 transition-transform">⌄</span></summary>
+            <p class="text-xs text-slate-600 leading-relaxed mt-3">As sessões duram 1 hora e acontecem toda semana ou a cada 15 dias, dependendo da demanda. Em casos de oscilação emocional intensa, costumo recomendar encontros semanais.</p>
+        </details>
+        <details class="p-5">
+            <summary class="flex justify-between items-center text-sm font-semibold text-slate-900">O que é Terapia do Esquema com DBT <span class="seta text-slate-400 transition-transform">⌄</span></summary>
+            <p class="text-xs text-slate-600 leading-relaxed mt-3">Na Terapia do Esquema, olhamos para necessidades que não foram atendidas lá atrás e que continuam influenciando o presente. A DBT entra com habilidades práticas para você se manter estável e seguro(a) durante o processo. É um trabalho integrativo, sem foco em técnicas isoladas.</p>
+        </details>
+    </div>
+
+    <!-- Triagem -->
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 mb-6 space-y-5">
+        <div>
+            <h3 class="text-sm font-bold text-slate-900">Antes de me chamar</h3>
+            <p class="text-xs text-slate-500 mt-1">Leva 20 segundos e já adianta a nossa conversa. Nada fica salvo neste site: suas respostas só viram a mensagem que você decidir enviar.</p>
         </div>
 
-        <!-- Card de Introdução -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 mb-6">
-            <h2 class="text-base font-semibold text-slate-900 mb-2">Um espaço seguro para você ser você.</h2>
-            <p class="text-sm text-slate-600 leading-relaxed">
-                Sem julgamentos ou receitas prontas. Meu foco é entender a raiz do que você sente, te dar ferramentas práticas para o dia a dia e construir o processo em conjunto com você.
-            </p>
-            <div class="mt-4 pt-4 border-t border-slate-100 grid grid-cols-2 gap-2 text-xs text-slate-600 font-medium">
-                <div class="flex items-center gap-1.5">
-                    <span>✨</span> Psicoterapia (60 min)
-                </div>
-                <div class="flex items-center gap-1.5">
-                    <span>📋</span> Avaliação Psicológica
-                </div>
-                <div class="flex items-center gap-1.5">
-                    <span>📝</span> Resumo pós-sessão
-                </div>
-                <div class="flex items-center gap-1.5">
-                    <span>🤝</span> Abordagem Prática
-                </div>
-            </div>
-        </div>
-
-        <!-- Seção de Triagem Rápida (Interativa) -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 mb-6 space-y-5">
-            <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">Passo 1 de 2: Sobre a sua busca</h3>
-            
-            <!-- Pergunta 1 -->
-            <div>
-                <label class="block text-xs font-semibold text-slate-700 mb-2">Já fez terapia antes?</label>
-                <div class="grid grid-cols-2 gap-2">
-                    <button type="button" onclick="selectOption(this, 'terapia')" class="option-btn-terapia text-xs py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 font-medium hover:border-teal-600 transition-all text-center">Nunca fiz</button>
-                    <button type="button" onclick="selectOption(this, 'terapia')" class="option-btn-terapia text-xs py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 font-medium hover:border-teal-600 transition-all text-center">Já fiz antes</button>
-                </div>
-            </div>
-
-            <!-- Pergunta 2 -->
-            <div>
-                <label class="block text-xs font-semibold text-slate-700 mb-2">O que você busca trabalhar principal?</label>
-                <select id="motivo" class="w-full text-xs py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 bg-white focus:outline-none focus:border-teal-600">
-                    <option value="" disabled selected>Selecione uma opção...</option>
-                    <option value="ansiedade">Ansiedade / Regulação Emocional</option>
-                    <option value="relacionamentos">Relacionamentos / Dependência Emocional</option>
-                    <option value="autoestima">Baixa Autoestima / Autoconhecimento</option>
-                    <option value="avaliacao">Avaliação Psicológica / Laudo</option>
-                    <option value="outro">Outro / Questão específica</option>
-                </select>
+        <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-2">O que você procura?</label>
+            <div class="grid grid-cols-1 gap-2">
+                <button type="button" data-g="servico" data-v="psicoterapia" class="opt text-xs py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 font-medium text-center">Psicoterapia (sessões de 1 hora)</button>
+                <button type="button" data-g="servico" data-v="avaliação psicológica" class="opt text-xs py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 font-medium text-center">Avaliação psicológica</button>
+                <button type="button" data-g="servico" data-v="ainda não sei" class="opt text-xs py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 font-medium text-center">Ainda não sei</button>
             </div>
         </div>
 
-        <!-- Card de Valores -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 mb-6">
-            <h3 class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2">Investimento (Psicoterapia)</h3>
-            <p class="text-xs text-slate-600 mb-3">O valor regular é de <strong>R$ 150 por sessão</strong> ou <strong>R$ 500 no pacote mensal (4 sessões)</strong>. Possuo vagas sociais mediante avaliação socioeconômica.</p>
+        <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-2">Já fez terapia antes?</label>
+            <div class="grid grid-cols-2 gap-2">
+                <button type="button" data-g="antes" data-v="nunca fiz" class="opt text-xs py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 font-medium text-center">Nunca fiz</button>
+                <button type="button" data-g="antes" data-v="já fiz antes" class="opt text-xs py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 font-medium text-center">Já fiz antes</button>
+            </div>
         </div>
 
-        <!-- Botões de Ação Final -->
-        <div class="space-y-3">
-            <!-- Opção A: Vai direto para a agenda -->
-            <a href="https://agendahenrique.netlify.app/?p=agenda" id="btn-agenda" class="block w-full bg-teal-700 hover:bg-teal-800 text-white font-semibold text-sm py-3.5 px-4 rounded-xl text-center shadow-sm transition-all">
-                Estou dentro do valor / Ver Agenda 📅
-            </a>
-
-            <!-- Opção B: Vai para o WhatsApp pedir vaga social ou tirar dúvidas -->
-            <a href="https://wa.me/5511989834166?text=Olá%20Henrique!%20Respondi%20ao%20pré-agendamento%20no%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20avaliação%20socioeconômica%20ou%20avaliação%20psicológica." target="_blank" class="block w-full bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold text-sm py-3.5 px-4 rounded-xl text-center transition-all">
-                Preciso de vaga social / Falar no WhatsApp 💬
-            </a>
+        <div id="bloco-tema" class="hidden">
+            <label class="block text-xs font-semibold text-slate-700 mb-1" id="tema-rotulo">O que mais pesa hoje?</label>
+            <p class="text-xs text-slate-400 mb-2">Opcional. Pode marcar até 3.</p>
+            <div class="grid grid-cols-2 gap-2" id="tema-opcoes"></div>
         </div>
+    </div>
 
-    </main>
+    <!-- Valores -->
+    <div id="bloco-valor" class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 mb-6 hidden">
+        <h3 class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2" id="valor-titulo">Investimento</h3>
+        <div class="text-xs text-slate-600 mb-3 leading-relaxed" id="valor-texto"></div>
+        <div id="valor-opcoes" class="grid grid-cols-1 gap-2"></div>
+    </div>
 
-    <!-- Rodapé -->
-    <footer class="text-center py-6 text-xs text-slate-400">
-        Henrique Psicologia Clínica &bull; Todos os direitos reservados
-    </footer>
+    <!-- Ações -->
+    <div id="acoes" class="space-y-3 hidden">
+        <a id="btn-agenda" href="#" class="hidden block w-full bg-teal-700 hover:bg-teal-800 text-white font-semibold text-sm py-3.5 px-4 rounded-xl text-center shadow-sm">Ver horários e marcar 📅</a>
+        <a id="btn-social" href="https://forms.gle/AeyNzDFWubXNJ8kd8" target="_blank" rel="noopener" class="hidden block w-full bg-teal-700 hover:bg-teal-800 text-white font-semibold text-sm py-3.5 px-4 rounded-xl text-center shadow-sm">Fazer a avaliação socioeconômica (rápida) 📝</a>
+        <a id="btn-wa" href="#" target="_blank" rel="noopener" class="block w-full bg-white border border-teal-700 text-teal-800 font-semibold text-sm py-3.5 px-4 rounded-xl text-center hover:bg-teal-50">Falar com o Henrique no WhatsApp 💬</a>
+        <p id="dica" class="text-xs text-slate-500 text-center px-2"></p>
+    </div>
+    <p id="faltam" class="text-xs text-slate-400 text-center">Responda as duas primeiras perguntas para continuar.</p>
 
-    <!-- Script simples para alternar seleção dos botões -->
-    <script>
-        function selectOption(element, group) {
-            document.querySelectorAll(`.option-btn-${group}`).forEach(btn => {
-                btn.classList.remove('border-teal-600', 'bg-teal-50', 'text-teal-900', 'font-bold');
-            });
-            element.classList.add('border-teal-600', 'bg-teal-50', 'text-teal-900', 'font-bold');
+    <div class="mt-8 text-xs text-slate-500 bg-white rounded-xl border border-slate-100 p-4 leading-relaxed">
+        <b>Se você está em crise agora</b> ou com pensamentos de se machucar, não espere por mim: ligue <b>188</b> (CVV, 24 horas, gratuito) ou <b>192</b> (SAMU).
+    </div>
+</main>
+
+<footer class="text-center py-6 text-xs text-slate-400">Henrique Psicologia Clínica &bull; Todos os direitos reservados</footer>
+
+<script>
+(function () {
+    var WA = '5511989834166', AGENDA = 'https://agendahenrique.netlify.app/?p=agenda';
+    var ORIGENS = { tiktok: 'TikTok', instagram: 'Instagram', psymeet: 'PsyMeet', indicacao: 'indicação', google: 'Google' };
+    var TEMAS_TERAPIA = ['Ansiedade', 'Emoções intensas / instabilidade emocional (borderline)', 'Relacionamentos / dependência emocional', 'Autoestima', 'Neurodivergência (TDAH, autismo)', 'Outro assunto', 'Prefiro contar na conversa'];
+    var TEMAS_AVALIACAO = ['Autismo (TEA)', 'TDAH', 'Personalidade / borderline', 'Outra questão ou não sei', 'Prefiro conversar'];
+    var TXT_SOCIAL = 'Reservo algumas vagas com valor social, definidas por uma avaliação socioeconômica rápida e sigilosa.';
+    var r = { servico: '', antes: '', temas: [], valor: '' };
+    var q = new URLSearchParams(location.search), o = String(q.get('o') || '').toLowerCase().replace(/[^a-z]/g, '');
+    var origemChave = ORIGENS[o] ? o : 'site', origem = ORIGENS[o] || '';
+
+    function $(id) { return document.getElementById(id); }
+    function esc(t) { return String(t).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+    function minusculo(t) { return /^[A-ZÀ-Ú]{2,}/.test(t) ? t : t.charAt(0).toLowerCase() + t.slice(1); }   // mantém siglas (TDAH)
+
+    // Formato fixo: fácil de ler no WhatsApp e de contar depois ("Vim pelo site (TikTok)").
+    function mensagem() {
+        var p = ['Olá Henrique! Vim pelo site' + (origem ? ' (' + origem + ')' : '') + '.'];
+        if (r.servico) p.push('Procuro: ' + r.servico + '.');
+        if (r.antes) p.push('Terapia antes: ' + r.antes + '.');
+        if (r.temas.length) p.push((r.servico === 'avaliação psicológica' ? 'Avaliação para: ' : 'Busco trabalhar: ') + r.temas.map(minusculo).join(', ') + '.');
+        if (r.valor) p.push('Valor: ' + r.valor + '.');
+        return p.join(' ');
+    }
+
+    function temasBloco() {
+        var b = $('bloco-tema');
+        if (!r.servico) { b.classList.add('hidden'); return; }
+        var lista = r.servico === 'avaliação psicológica' ? TEMAS_AVALIACAO : TEMAS_TERAPIA;
+        $('tema-rotulo').textContent = r.servico === 'avaliação psicológica' ? 'A avaliação é para investigar...' : 'O que mais pesa hoje?';
+        $('tema-opcoes').innerHTML = lista.map(function (t) {
+            return '<button type="button" data-g="tema" data-v="' + esc(t) + '" class="opt text-xs py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 font-medium text-center">' + esc(t) + '</button>';
+        }).join('');
+        r.temas = r.temas.filter(function (t) { return lista.indexOf(t) >= 0; });
+        b.classList.remove('hidden');
+        ligar($('tema-opcoes')); marcarTemas();
+    }
+
+    function valorBloco() {
+        var b = $('bloco-valor'), opc = $('valor-opcoes');
+        if (!r.servico) { b.classList.add('hidden'); return; }
+        b.classList.remove('hidden');
+        if (r.servico === 'avaliação psicológica') {
+            $('valor-titulo').textContent = 'Avaliação psicológica';
+            $('valor-texto').innerHTML = 'Processo com começo, meio e fim: de <strong>8 a 12 encontros</strong> de 1 hora, com entrevista inicial, instrumentos, documento final e sessão de devolutiva.<br><br>' +
+                '<strong>Valor do processo:</strong><br>• À vista: <strong>R$ 1.500</strong><br>• Pix: 3x de <strong>R$ 600</strong><br>• Cartão: até 12x de <strong>R$ 160,79</strong><br>• Ou por sessão: <strong>R$ 180</strong>';
+            opc.innerHTML = '';
+            r.valor = 'vi os valores da avaliação';
+            return;
         }
-    </script>
+        if (r.valor === 'vi os valores da avaliação') r.valor = '';
+        if (r.servico === 'ainda não sei') {
+            $('valor-titulo').textContent = 'Investimento';
+            $('valor-texto').innerHTML = 'Psicoterapia: sessão de 1 hora a <strong>R$ 150</strong>, ou <strong>R$ 500 por mês</strong> (4 sessões). ' + TXT_SOCIAL + ' A avaliação psicológica tem valor fechado para o processo todo: me chame que eu explico.';
+            opc.innerHTML = ''; r.valor = ''; return;
+        }
+        $('valor-titulo').textContent = 'Investimento (psicoterapia)';
+        $('valor-texto').innerHTML = 'Sessão de 1 hora: <strong>R$ 150</strong>, ou <strong>R$ 500 por mês</strong> (4 sessões). ' + TXT_SOCIAL;
+        opc.innerHTML = '<button type="button" data-g="valor" data-v="o valor está ok" class="opt text-xs py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 font-medium text-center">O valor está ok para mim</button>' +
+                        '<button type="button" data-g="valor" data-v="preciso do valor social" class="opt text-xs py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 font-medium text-center">Preciso do valor social</button>';
+        ligar(opc); marcar('valor');
+    }
+
+    function marcar(g) { document.querySelectorAll('[data-g="' + g + '"]').forEach(function (b) { b.classList.toggle('sel', b.getAttribute('data-v') === r[g]); }); }
+    function marcarTemas() { document.querySelectorAll('[data-g="tema"]').forEach(function (b) { b.classList.toggle('sel', r.temas.indexOf(b.getAttribute('data-v')) >= 0); }); }
+
+    function linkAgenda() {
+        return AGENDA + '&o=' + origemChave + '&s=' + (r.servico === 'avaliação psicológica' ? 'avaliacao' : 'terapia');
+    }
+
+    function acoes() {
+        var pronto = !!(r.servico && r.antes);
+        $('acoes').classList.toggle('hidden', !pronto);
+        $('faltam').classList.toggle('hidden', pronto);
+        if (!pronto) return;
+        var terapia = r.servico === 'psicoterapia', aval = r.servico === 'avaliação psicológica';
+        var agenda = $('btn-agenda'), social = $('btn-social'), dica = $('dica');
+        // Terapia com valor ok e avaliação: pode marcar direto. Valor social: antes, a avaliação socioeconômica. "Ainda não sei": conversa.
+        var marcaDireto = (terapia && r.valor === 'o valor está ok') || aval;
+        agenda.classList.toggle('hidden', !marcaDireto);
+        agenda.textContent = aval ? 'Ver horários e marcar a entrevista inicial 📅' : 'Ver horários e marcar a primeira sessão 📅';
+        agenda.href = linkAgenda();
+        social.classList.toggle('hidden', !(terapia && r.valor === 'preciso do valor social'));
+        $('btn-wa').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(mensagem());
+        dica.textContent = terapia && !r.valor ? 'Escolha acima se o valor está ok para você.' :
+            (terapia && r.valor === 'preciso do valor social' ? 'Depois da avaliação, me chame no WhatsApp: a mensagem já vai com as suas respostas.' : 'Se preferir conversar antes, a mensagem do WhatsApp já vai pronta com as suas respostas.');
+    }
+
+    function ligar(raiz) {
+        (raiz || document).querySelectorAll('.opt').forEach(function (b) {
+            b.onclick = function () {
+                var g = b.getAttribute('data-g'), v = b.getAttribute('data-v');
+                if (g === 'tema') {
+                    var i = r.temas.indexOf(v);
+                    if (i >= 0) r.temas.splice(i, 1);
+                    else if (/^Prefiro/.test(v)) r.temas = [v];
+                    else { r.temas = r.temas.filter(function (t) { return !/^Prefiro/.test(t); }); if (r.temas.length < 3) r.temas.push(v); }
+                    marcarTemas(); acoes(); return;
+                }
+                r[g] = v;
+                if (g === 'servico') { r.valor = ''; temasBloco(); valorBloco(); }
+                marcar(g); acoes();
+            };
+        });
+    }
+    ligar(); valorBloco(); acoes();
+    window.__estado = function () { return { r: r, msg: mensagem(), agenda: linkAgenda() }; };   // só para teste
+})();
+</script>
 </body>
 </html>
